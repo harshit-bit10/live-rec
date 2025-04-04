@@ -126,7 +126,34 @@ async def handle_group_message(client: Client, message) -> None:
             await message.reply(
                 "<code>This bot is not authorized to respond in this group. Contact Support now.</code>"
             )
-           
+            
+            try:
+                await client.send_message(
+                    chat_id=Config.OWNER_ID,
+                    text=(
+                        "<i>Unauthorized group has accessed your bot and its commands, here are its full details:</i>\n\n"
+                        f"<b>Group Name:</b> <code>{message.chat.title}</code>\n"
+                        f"<b>Group ID:</b> <code>{message.chat.id}</code>\n"
+                        f"<b>User:</b> <code>{message.from_user.first_name} {message.from_user.last_name if message.from_user.last_name else ''}</code>\n"
+                        f"<b>Username:</b> <code>@{username}</code>\n"
+                        f"<b>User ID:</b> <code>{user_id}</code>\n"
+                        f"<b>Language Code:</b> <code>{message.from_user.language_code if message.from_user.language_code else 'N/A'}</code>\n"
+                        f"<b>Message Type:</b> <code>{message.chat.type}</code>\n"
+                        f"<b>Command / Message:</b> <code>{message.text}</code>\n"
+                        f"<b>Message ID:</b> <code>{message.id}</code>\n"
+                        f"<b>User Profile Photo:</b> <code>{message.from_user.photo.small_file_id if message.from_user.photo else 'No photo available'}</code>\n"  # User profile photo
+                    )
+                )
+                print(
+                    f"Sent unauthorized command details to owner: {Config.OWNER_ID} "
+                    f"for the message/command '{message.text}' from user '{message.from_user.first_name} {message.from_user.last_name if message.from_user.last_name else ''}' "
+                    f"(User  ID: {user_id}) at {timestamp}"
+                )
+            except Exception as e:
+                print(f"Failed to send message to owner: {e}")
+            return
+
+    
     # Additional logic for authorized groups can go here
 
     # Handle authorized users' messages here
