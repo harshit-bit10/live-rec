@@ -384,10 +384,10 @@ async def add_metadata_to_video(input_file: str, output_file: str, metadata_text
     cmd = [
         'ffmpeg', '-y', '-err_detect', 'ignore_err', '-i', input_file, '-c', 'copy',
         '-map', '0', '-c:s', 'copy', '-c:a', 'copy', '-c:v', 'copy',
-        '-metadata:s:s', f'title={SharkToonsIndia}',
-        '-metadata:s:a', f'title={SharkToonsIndia}',
-        '-metadata:s:v', f'title={SharkToonsIndia}',
-        '-metadata', f'title={SharkToonsIndia}',
+        '-metadata:s:s', f'title={metadata_text}',
+        '-metadata:s:a', f'title={metadata_text}',
+        '-metadata:s:v', f'title={metadata_text}',
+        '-metadata', f'title={metadata_text}',
         output_file
     ]
 
