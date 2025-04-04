@@ -1,0 +1,50 @@
+# Telegram Bot App
+
+This project is a simple Telegram bot deployed on Heroku. The bot interacts with Telegram APIs and uses various environment variables for configuration. Follow the steps below to deploy it easily to your Heroku account.
+
+## Deploy to Heroku
+
+Click the button below to deploy this app directly to Heroku.
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/your-username/your-repo-name)
+
+## Configuration
+
+Before deploying, make sure to set the necessary environment variables for your app. You can do this through the Heroku dashboard or by using the `app.json` file which defines the required variables.
+
+The following environment variables need to be set:
+
+- **API_ID**: Obtain from [Telegram's Developer Portal](https://my.telegram.org).
+- **API_HASH**: Obtain from [Telegram's Developer Portal](https://my.telegram.org).
+- **BOT_TOKEN**: Get this from [@BotFather](https://t.me/botfather).
+- **OWNER_ID**: Optional. The user ID of the bot owner.
+- **PM_AUTH_USERS**: Optional. A list of user IDs with no time limits.
+- **CHAT_ID**: Optional. The ID of the group chat.
+- **DOWNLOAD_DIRECTORY**: Optional. Directory where files will be downloaded.
+- **CRED_TEXT**: Optional. The credential text for your bot.
+
+### Running Locally or vps
+
+To run this app on your local machine or vps, follow these steps:
+
+1. Clone the repo:
+
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
+
+Install the dependencies:
+
+
+pip install -r requirements.txt
+Set the required environment variables. You can do this by creating a .env file or exporting them in your terminal:
+
+Example .env file:
+
+API_ID=your_api_id
+API_HASH=your_api_hash
+BOT_TOKEN=your_bot_token
+OWNER_ID=your_owner_id
+Run the app locally:
+
+python app.py
