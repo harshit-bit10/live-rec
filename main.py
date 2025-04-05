@@ -348,11 +348,8 @@ async def uploader_main(usr_link: str, msg: Message, cb_data: str, message, chan
         # Get current date for filename
         date = datetime.now().strftime("%H-%M-%Y")
         
-        # Inside the uploader_main function, after recording is done
-        quality, extension = await get_video_info(video_file_path)
-
         # Create the caption with audio and video details
-        cap = f"<b>Filename:</b> <code>{title}.{channel}.{start_time}-{end_time}.{date}.IPTV.WEB-DL.{extension}</code>\n<b>Credits: {Config.CRED_TEXT}<code>{Config.CRED_TEXT}</code>"
+        cap = f"<b>Filename:</b> <code>{title}.{channel}.{start_time}-{end_time}.{date}.IPTV.WEB-DL.{extension}</code>\n<b>Credits: <code>{Config.CRED_TEXT}</code>"
 
         # Check if the video file exists before uploading 
         if not os.path.exists(video_file_path):
