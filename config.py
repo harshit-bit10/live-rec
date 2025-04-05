@@ -4,7 +4,7 @@ class Config(object):
     # API credentials
     API_ID = int(os.environ.get("API_ID",17108931 ))  # Replace with your actual API ID Ex 152002 don't use inverted commas here
     API_HASH = os.environ.get("API_HASH", "436b24700208cae55ded351d8f25fd7a")  # Replace with your actual API Hash
-    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7129828945:AAHYgGpRXbLqavREmkiQMDi77Psks3_vGgM")  # Replace with your actual Bot Token
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "7129828945:AAEXgYw4HhToIcgWrJcoo17R1EvdI0lts2I")  # Replace with your actual Bot Token
 
     # Owner ID
     OWNER_ID = int(os.environ.get("OWNER_ID", 5300197778))  # Replace with your actual Owner ID
